@@ -6,7 +6,7 @@
     <title>OpenSunstar — 一站式 AI 编程工作流工程化配置平台</title>
     <meta
       name="description"
-      content="OpenSunstar 是跨多项目组合矩阵的 AI 就绪度驾驶舱：AI 工作区、方法论与工作流编排、跨工具 Agent 配置双向同步、API 快速一键接入、上下文管理与 AI 用量成本管控。支持 Windows/macOS/Linux，全本地运行。"
+      content="OpenSunstar 是 GUI + CLI(TUI) 双模态 AI 编程工作流平台：桌面驾驶舱与 os 命令行共用 ~/.OpenSunstar，CLI 可独立运行。工作区治理、编排、Agent 同步、快速接入。"
     />
     <meta name="theme-color" content="#0d1117" />
     <link rel="icon" href="assets/icon.png" type="image/png" />
@@ -16,11 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css?v=7" />
+    <link rel="stylesheet" href="css/style.css?v=8" />
     <meta property="og:title" content="OpenSunstar — 一站式 AI 编程工作流工程化配置平台" />
     <meta
       property="og:description"
-      content="AI 就绪度驾驶舱：工作区治理、方法论与编排、Agent 配置同步、快速接入、上下文与用量管理。7 个 CLI 工具，7+ 精选供应商预设。"
+      content="GUI + CLI(TUI) 双模态：桌面 GUI 与 os 命令行独立启动、数据同源。工作区治理、编排、Agent 同步、快速接入。7 个 CLI 工具。"
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://opensunstar.github.io/" />
@@ -40,6 +40,7 @@
           OpenSunstar
         </a>
         <ul class="nav-links">
+          <li><a href="#dual-mode" data-section="dual-mode">双模态</a></li>
           <li><a href="#architecture" data-section="architecture">架构</a></li>
           <li><a href="#features" data-section="features">功能</a></li>
           <li><a href="#tools" data-section="tools">支持工具</a></li>
@@ -59,7 +60,7 @@
             href="https://github.com/alisunstar/OpenSunstar/releases/latest"
             target="_blank"
             rel="noopener"
-            >下载 v1.1.3</a
+            >下载 v1.1.4</a
           >
         </div>
       </div>
@@ -71,7 +72,7 @@
       <div class="container">
         <div class="hero-badge">
           <span class="dot"></span>
-          开源 · MIT License · Tauri 2 原生桌面
+          开源 · MIT License · GUI + CLI(TUI) 双模态
         </div>
         <h1 class="hero-title">AI 编程工作流<br />工程化配置平台</h1>
         <p class="subtitle">
@@ -96,9 +97,9 @@
           >
         </div>
         <div class="hero-meta">
-          <span>✓ 7 个 AI CLI 工具</span>
-          <span>✓ 7+ 精选供应商预设（可自定义更多，含中转站）</span>
-          <span>✓ 工作区 · 方法论与编排 · Agent 配置 · Context · AI Tokens</span>
+          <span>✓ 桌面 GUI + CLI `os` 全屏 TUI</span>
+          <span>✓ CLI 可独立运行，无需先开 GUI</span>
+          <span>✓ 7 个 AI CLI 工具 · 工作区 · 编排 · Agent 配置</span>
           <span>✓ 简中 / 繁中 / EN / 日 · 全本地 · 零遥测</span>
         </div>
         <div class="hero-preview">
@@ -160,6 +161,72 @@
         </div>
       </div>
     </header>
+
+    <section id="dual-mode">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Dual Mode</span>
+          <h2 class="section-title">GUI + CLI(TUI) 双模态</h2>
+          <p class="section-desc">
+            同一产品、两种入口：人看桌面 GUI，Agent 与 CI 用 <code>os</code>。两个进程可独立启动，共用
+            <code>~/.OpenSunstar/</code> 数据库与工具配置——双模态、数据统一。
+          </p>
+        </div>
+        <div class="card-grid card-grid-3">
+          <article class="card">
+            <div class="card-icon gold">🖥️</div>
+            <h3>桌面 GUI</h3>
+            <p>
+              Tauri 2 原生应用：供应商可视化、工作区驾驶舱、Agent 资产管理、本地代理与高可用、云同步设置。
+            </p>
+            <div class="card-tags">
+              <span class="tag">Quick Connect</span>
+              <span class="tag">代理 :15721</span>
+              <span class="tag">工作区</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-icon teal">⌨️</div>
+            <h3>CLI <code>os</code></h3>
+            <p>
+              独立二进制：漂移检测、就绪度评分、阶段门禁、供应商切换。交互终端下直接运行
+              <code>os</code> 进入全屏 TUI 治理仪表盘。
+            </p>
+            <div class="card-tags">
+              <span class="tag">--json</span>
+              <span class="tag">TUI</span>
+              <span class="tag">AGENTS.md</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-icon orange">🔗</div>
+            <h3>独立启动 · 数据同源</h3>
+            <p>
+              <strong>无需先开 GUI</strong>即可使用 CLI——首次运行自动 bootstrap 数据库。代理接管场景请保持桌面应用运行；纯治理与切供应商仅需
+              <code>os</code>。
+            </p>
+            <div class="card-tags">
+              <span class="tag">bootstrap</span>
+              <span class="tag">共享 DB</span>
+            </div>
+          </article>
+        </div>
+        <div class="code-block" style="margin-top: 28px">
+          <button class="copy-btn" type="button">复制</button>
+          <code
+            ><span class="comment"># 仅 CLI（从 Release 下载 os 附件）</span><br /><span
+              class="cmd"
+              >os config bootstrap --yes</span
+            ><br /><span class="cmd">os</span>
+            <span class="comment"># 全屏 TUI 仪表盘</span><br /><span class="cmd"
+              >os drift check --json</span
+            ><br /><span class="cmd"
+              >os provider switch --app claude --id &lt;provider-id&gt; --yes</span
+            ></code
+          >
+        </div>
+      </div>
+    </section>
 
     <section id="architecture">
       <div class="container">
@@ -317,6 +384,16 @@
         </div>
         <div class="feature-list">
           <div class="feature-item">
+            <div class="fi-icon">⌨️</div>
+            <div>
+              <strong>CLI `os` + 全屏 TUI</strong>
+              <span
+                >独立命令行工具：治理编排、供应商切换、Agent 集成（--json）。交互终端运行
+                <code>os</code> 打开全屏仪表盘。无需 GUI 即可 bootstrap 与日常使用。</span
+              >
+            </div>
+          </div>
+          <div class="feature-item">
             <div class="fi-icon">📊</div>
             <div>
               <strong>AI 工作区 — 就绪度驾驶舱</strong>
@@ -420,8 +497,8 @@
           <span class="section-label">Quick Start</span>
           <h2 class="section-title">🚀 快速开始</h2>
           <p class="section-desc">
-            选择你的平台，下载安装包即可。首次启动会自动导入现有 CLI 配置为 default
-            供应商，零迁移成本。
+            安装桌面 GUI，或通过 <code>npm install -g opensunstar-os</code> 仅安装 CLI
+            <code>os</code>。首次使用会自动导入或 bootstrap 现有 CLI 配置。
           </p>
         </div>
 
@@ -430,10 +507,10 @@
             ><span class="check">✓</span> Windows 10+ / macOS 12+ / Ubuntu 22.04+</span
           >
           <span class="prereq-item"
-            ><span class="check">✓</span> 无需 Node.js（原生安装包）</span
+            ><span class="check">✓</span> GUI 安装包无需 Node.js</span
           >
           <span class="prereq-item"
-            ><span class="check">✓</span> 已有 CLI 配置可自动导入</span
+            ><span class="check">✓</span> CLI：<code>npm i -g opensunstar-os</code>（Node 18+）</span
           >
         </div>
 
@@ -447,47 +524,54 @@
 
         <div class="platform-panel active" id="platform-windows">
           <p style="color: var(--text-secondary); margin-bottom: 16px">
-            从 Releases 下载 <code>OpenSunstar-v1.1.3-Windows.msi</code> 安装包，或
-            Portable 绿色版解压即用。
+            GUI：<code>OpenSunstar-v1.1.4-Windows.msi</code> · CLI：
+            <code>npm install -g opensunstar-os</code> 或 Release 附件
+            <code>OpenSunstar-v*-os-windows-x86_64.zip</code>
           </p>
           <div class="code-block">
             <button class="copy-btn" type="button">复制</button>
             <code
-              ># 1. 下载并安装 MSI 或解压 Portable<br /># 2. 启动 OpenSunstar →
-              快速接入 → 选择供应商 → 应用配置<br /># 3. 重启终端（Claude Code
-              可热切换，无需重启）</code
+              ># CLI（npm，安装时自动拉取 Release 二进制）<br />npm install -g
+              opensunstar-os<br />os doctor --json<br /><br /># GUI：下载 MSI →
+              快速接入 → 应用配置</code
             >
           </div>
         </div>
 
         <div class="platform-panel" id="platform-macos">
           <p style="color: var(--text-secondary); margin-bottom: 16px">
-            推荐 Homebrew 安装；亦可通过 DMG 手动安装（已通过 Apple 公证）。
+            GUI：<code>brew install --cask OpenSunstar</code> 或 DMG · CLI：
+            <code>npm install -g opensunstar-os</code>
           </p>
           <div class="code-block">
             <button class="copy-btn" type="button">复制</button>
             <code
-              ><span class="comment"># Homebrew（推荐）</span><br /><span
+              ><span class="comment"># CLI（npm，推荐 Agent / CI）</span><br /><span
                 class="cmd"
-                >brew install --cask OpenSunstar</span
-              ><br /><br /><span class="comment"># 更新</span><br /><span
-                class="cmd"
-                >brew upgrade --cask OpenSunstar</span
-              ></code
+                >npm install -g opensunstar-os</span
+              ><br /><span class="cmd">os doctor --json</span><br /><br /><span
+                class="comment"
+                ># GUI — Homebrew</span
+              ><br /><span class="cmd">brew install --cask OpenSunstar</span
+              ><br /><span class="cmd">brew upgrade --cask OpenSunstar</span></code
             >
           </div>
         </div>
 
         <div class="platform-panel" id="platform-linux">
           <p style="color: var(--text-secondary); margin-bottom: 16px">
-            支持 .deb / .rpm / AppImage；Arch 用户可通过 AUR 安装。
+            GUI：.deb / .rpm / AppImage · CLI：<code>npm install -g opensunstar-os</code>
           </p>
           <div class="code-block">
             <button class="copy-btn" type="button">复制</button>
             <code
-              ><span class="comment"># Debian / Ubuntu</span><br /><span
-                class="cmd"
-                >sudo dpkg -i OpenSunstar-v1.1.3-Linux.deb</span
+              ><span class="comment"># CLI（npm）</span><br /><span class="cmd"
+                >npm install -g opensunstar-os</span
+              ><br /><span class="cmd">os drift check --json</span><br /><br /><span
+                class="comment"
+                ># GUI — Debian / Ubuntu</span
+              ><br /><span class="cmd"
+                >sudo dpkg -i OpenSunstar-v1.1.4-Linux.deb</span
               ><br /><br /><span class="comment"># Arch (paru)</span><br /><span
                 class="cmd"
                 >paru -S OpenSunstar-bin</span
@@ -497,6 +581,28 @@
         </div>
 
         <div class="download-cards">
+          <div class="download-card">
+            <h4>⌨️ CLI `os`</h4>
+            <p>
+              <code>npm install -g opensunstar-os</code>（v1.1.4）— 安装时自动拉取 Release
+              原生二进制；亦可从 Release 下载 os-* 附件。
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://www.npmjs.com/package/opensunstar-os"
+              target="_blank"
+              rel="noopener"
+              >npm 安装 opensunstar-os →</a
+            >
+            <a
+              class="btn btn-secondary"
+              href="https://github.com/alisunstar/OpenSunstar/blob/main/AGENTS.md"
+              target="_blank"
+              rel="noopener"
+              style="margin-top: 8px"
+              >Agent 集成 AGENTS.md →</a
+            >
+          </div>
           <div class="download-card">
             <h4>📦 最新 Release</h4>
             <p>获取全平台安装包与更新日志。</p>
@@ -541,6 +647,34 @@
           <h2 class="section-title">常见问题</h2>
         </div>
         <div class="faq-list">
+          <details class="faq-item">
+            <summary>如何用 npm 安装 CLI `os`？</summary>
+            <p>
+              全局安装：<code>npm install -g opensunstar-os</code>（需 Node.js 18+）。包名
+              <a href="https://www.npmjs.com/package/opensunstar-os" target="_blank" rel="noopener"
+                >opensunstar-os</a
+              >
+              为 Node 薄包装，安装时从 GitHub Release 下载对应平台的 Rust 原生二进制。验证：<code
+                >os --version</code
+              >。也可从
+              <a
+                href="https://github.com/alisunstar/OpenSunstar/releases/latest"
+                target="_blank"
+                rel="noopener"
+                >Releases</a
+              >
+              手动下载 os-* 附件。
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>CLI `os` 需要先启动桌面 GUI 吗？</summary>
+            <p>
+              <strong>不需要。</strong> <code>os</code> 可单独下载运行，首次使用会自动创建
+              <code>~/.OpenSunstar/OpenSunstar.db</code>（或执行
+              <code>os config bootstrap --yes</code>）。治理、供应商切换、TUI 仪表盘均不依赖 GUI。若使用<strong>代理接管</strong>（本地
+              :15721），请保持桌面应用运行。
+            </p>
+          </details>
           <details class="faq-item">
             <summary>切换供应商后需要重启终端吗？</summary>
             <p>
@@ -615,6 +749,9 @@
             <h5>产品</h5>
             <ul>
               <li>
+                <a href="#dual-mode">CLI 双模态</a>
+              </li>
+              <li>
                 <a href="#features">功能特性</a>
               </li>
               <li>
@@ -688,7 +825,7 @@
         </div>
         <div class="footer-bottom">
           <span>© 2026 OpenSunstar · MIT License</span>
-          <span>Built with Tauri 2 · v1.1.3</span>
+          <span>Built with Tauri 2 · v1.1.4 · CLI `os`</span>
         </div>
       </div>
     </footer>
